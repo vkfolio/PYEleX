@@ -62,6 +62,35 @@ class PlatformError(PyElectronError):
     pass
 
 
+class RPCError(PyElectronError):
+    """Errors related to JSON-RPC communication"""
+    
+    def __init__(self, message: str, code: int = -32603, data: Any = None):
+        super().__init__(message)
+        self.code = code
+        self.data = data
+    
+    def to_dict(self) -> dict:
+        """Convert to JSON-RPC error format."""
+        error_dict = {
+            'code': self.code,
+            'message': self.message
+        }
+        if self.data is not None:
+            error_dict['data'] = self.data
+        return error_dict
+
+
+class SecurityError(PyElectronError):
+    """Errors related to security violations"""
+    pass
+
+
+class TransportError(IPCError):
+    """Errors related to IPC transport layer"""
+    pass
+
+
 def handle_exception(func):
     """
     Decorator to handle exceptions and convert them to PyElectron exceptions

@@ -17,8 +17,7 @@ from pyelectron.core.window import WindowConfig, WindowManager
 from pyelectron.core.process import ProcessManager
 
 # IPC imports
-from pyelectron.ipc.jsonrpc import JSONRPCHandler
-from pyelectron.ipc.shared_memory import SharedDataManager
+from pyelectron.ipc import IPCManager, JSONRPCProtocol
 
 # Security imports
 from pyelectron.security.permissions import Permission, PermissionManager
@@ -46,8 +45,8 @@ __all__ = [
     "ProcessManager",
     
     # IPC
-    "JSONRPCHandler",
-    "SharedDataManager",
+    "IPCManager",
+    "JSONRPCProtocol",
     
     # Security
     "Permission",

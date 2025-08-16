@@ -1,17 +1,28 @@
 """
-Inter-Process Communication (IPC) modules
+PyElectron IPC (Inter-Process Communication)
 
-This package provides secure and efficient communication between
-PyElectron processes using JSON-RPC over native transports.
+This package provides secure JSON-RPC based communication between processes
+using platform-native transport mechanisms (Unix sockets/named pipes).
 """
 
-from pyelectron.ipc.jsonrpc import JSONRPCHandler, JSONRPCClient
-from pyelectron.ipc.transport import NativeTransport
-from pyelectron.ipc.shared_memory import SharedDataManager
+from .transport import NativeTransport, TransportConfig
+from .protocol import JSONRPCProtocol, rpc_method
+from .manager import IPCManager, create_ipc_manager
+from .security import IPCSecurity, SecurityConfig, create_secure_config
+from .router import ServiceRegistry, MessageRouter, BaseService, service_method
 
 __all__ = [
-    "JSONRPCHandler",
-    "JSONRPCClient", 
-    "NativeTransport",
-    "SharedDataManager",
+    'NativeTransport',
+    'TransportConfig', 
+    'JSONRPCProtocol',
+    'rpc_method',
+    'IPCManager',
+    'create_ipc_manager',
+    'IPCSecurity',
+    'SecurityConfig',
+    'create_secure_config',
+    'ServiceRegistry',
+    'MessageRouter',
+    'BaseService',
+    'service_method',
 ]
