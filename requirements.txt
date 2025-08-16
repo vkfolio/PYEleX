@@ -1,0 +1,29 @@
+# Core runtime dependencies for PyElectron
+# Install with: pip install -r requirements.txt
+
+# Async file operations
+aiofiles>=23.0.0
+
+# CLI framework
+click>=8.0.0
+
+# File system watching for hot reload
+watchdog>=3.0.0
+
+# System and process monitoring
+psutil>=5.9.0
+
+# JSON handling (built-in, but ensure compatibility)
+# json - built-in Python module
+
+# Platform detection
+# platform - built-in Python module
+
+# Async programming
+# asyncio - built-in Python module
+
+# Multiprocessing
+# multiprocessing - built-in Python module
+
+# Path handling
+# pathlib - built-in Python module
